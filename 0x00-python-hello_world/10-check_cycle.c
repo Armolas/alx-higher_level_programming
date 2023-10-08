@@ -27,5 +27,6 @@ int check_cycle(listint_t *list)
 			current = current->next;
 		}
 	}
+	i = check_cycle(current->next);
 	return (i);
 }
