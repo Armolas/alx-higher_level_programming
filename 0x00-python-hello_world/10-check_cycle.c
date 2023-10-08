@@ -21,7 +21,11 @@ int check_cycle(listint_t *list)
 		{
 			now = current;
 			if (now == current->next)
+			{
 				i = 1;
+				break;
+			}
+			now = now->next;
 			while (now)
 			{
 				if (now == current)
