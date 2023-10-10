@@ -1,21 +1,23 @@
 #include "lists.h"
+#include "stdio.h"
 
 /**
  * is_pali - checks if an array is a palindrome
  * @arr: the array
+ * @l: length
  * Return: 0 or 1
  */
-int is_pali(int *arr)
+int is_pali(int *arr, int l)
 {
-	int len = sizeof(arr) / 4;
+	int len = l;
 	int i, j;
 
 	if (len == 1)
 		return (1);
 	if (len % 2 == 0)
 	{
-		j = (len / 2) + 1;
-		for (i = len / 2 ; i >= 0 ; i--)
+		j = (len / 2);
+		for (i = j - 1 ; i >= 0 ; i--)
 		{
 			if (arr[i] != arr[j])
 				return (0);
@@ -23,8 +25,8 @@ int is_pali(int *arr)
 		}
 		return (1);
 	}
-	j = (len / 2) + 2;
-	for (i = len / 2 ; i >= 0 ; i--)
+	j = (len / 2) + 1;
+	for (i = (len / 2) - 1 ; i >= 0 ; i--)
 	{
 		if (arr[i] != arr[j])
 			return (0);
@@ -50,6 +52,7 @@ int is_palindrome(listint_t **head)
 		i++;
 		current = current->next;
 	}
+	i = i - 1;
 	arr = malloc(sizeof(int) * i);
 	if (!arr)
 		return(0);
@@ -57,11 +60,16 @@ int is_palindrome(listint_t **head)
 	current = *head;
 	while (current)
 	{
-		current->n = arr[j];
+		arr[j] = current->n;
 		j++;
 		current = current->next;
 	}
-	ret = is_pali(arr);
+	for (j = 0 ; j < i ; j++)
+	{
+		printf("%d\n", arr[j]);
+	}
+	ret = is_pali(arr, i);
+	printf("%d\n", ret);
 	free(arr);
 	return (ret);
 }
