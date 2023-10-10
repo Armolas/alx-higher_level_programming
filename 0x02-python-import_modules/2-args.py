@@ -11,5 +11,4 @@ if __name__ == "__main__":
         print("{:d} arguments:".format(no_of_args))
         for i in range(1, no_of_args + 1):
             print("{}: {}".format(i, argv[i]))
-            i += 1
-    
+            i += 1 
