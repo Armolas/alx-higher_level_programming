@@ -64,12 +64,7 @@ int is_palindrome(listint_t **head)
 		j++;
 		current = current->next;
 	}
-	for (j = 0 ; j < i ; j++)
-	{
-		printf("%d\n", arr[j]);
-	}
 	ret = is_pali(arr, i);
-	printf("%d\n", ret);
 	free(arr);
 	return (ret);
 }
