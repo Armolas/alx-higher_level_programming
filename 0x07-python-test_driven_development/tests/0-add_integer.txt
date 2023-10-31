@@ -1,0 +1,35 @@
+This is the testfile for the add_integer function in the 0-add_integer.py file
+
+>>> add = __import__('0-add_integer').add_integer
+>>> add(2, 3)
+5
+
+>>> add(-2, 5)
+3
+
+>>> add(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add(2.0, 5.0)
+7
+
+>>> add("school")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add(98, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add(7, 'school')
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add(52)
+150
+
+>>> add('a', 'b')
+Traceback (most recent call last):
+TypeError: a must be an integer
+
