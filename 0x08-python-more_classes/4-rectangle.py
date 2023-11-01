@@ -57,4 +57,7 @@ class Rectangle:
                 rect += '#'
             rect += '\n'
         return rect
-        
+
+    def __repr__(self):
+       """returns the representation of rectangle instance"""
+       return "Rectangle(" + str(self.width) + ", " + str(self.height) + ")"
