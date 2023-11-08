@@ -10,5 +10,4 @@ import json
 def load_from_json_file(filename):
     """creates an object from a json file"""
     with open(filename, encoding="utf-8") as myFile:
-        string = myFile.read()
-    return json.loads(string)
+        return json.load(myFile)
