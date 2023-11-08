@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-import json
 """This module contains the function fro_json_string"""
+
+
+import json
+"""This module contains the Javasript Object Notation"""
 
 
 def from_json_string(my_str):
