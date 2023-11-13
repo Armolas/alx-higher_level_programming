@@ -6,10 +6,6 @@ from models.rectangle import Rectangle
 """This module contains the Rectangle Class"""
 
 
-from models.base import Base
-"""This module contains the Base class"""
-
-
 class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """initializes a square object"""
