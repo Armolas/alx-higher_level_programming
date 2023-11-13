@@ -2,12 +2,12 @@
 """This module contains the class Square"""
 
 
-from models.base import Base
-"""This module contains the Base class"""
-
-
 from models.rectangle import Rectangle
 """This module contains the Rectangle Class"""
+
+
+from models.base import Base
+"""This module contains the Base class"""
 
 
 class Square(Rectangle):
@@ -61,4 +61,3 @@ class Square(Rectangle):
         my_dict['x'] = self.x
         my_dict['y'] = self.y
         return my_dict
-

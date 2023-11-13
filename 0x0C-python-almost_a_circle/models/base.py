@@ -9,6 +9,7 @@ import json
 class Base:
     """This class creates an instace of base"""
     __nb_objects = 0
+
     def __init__(self, id=None):
         """initializes the base class"""
         if id is not None:
