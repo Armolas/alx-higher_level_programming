@@ -35,6 +35,9 @@ class Base:
             dict_list.append(_dict)
         strn = cls.to_json_string(dict_list)
         with open(filename, mode='w', encoding="utf-8") as file:
+            if list_objs is None:
+                file.write("[]")
+                return
             file.write(strn)
 
     @staticmethod
