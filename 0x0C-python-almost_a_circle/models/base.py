@@ -65,3 +65,29 @@ class Base:
             ins = cls.create(**_dict)
             instances.append(ins)
         return instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """writes the JSON string representation of list_objs to a file"""
+        filename = f"{cls.__name__}.csv"
+        dict_list = []
+        if list_objs is not None:
+            for obj in list_objs:
+                dict_list.append(obj.to_dictionary())
+        with open(filename, mode='w', encoding="utf-8") as file:
+            file.write(cls.to_json_string(dict_list))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        filename = f"{cls.__name__}.csv"
+        try:
+            with open(filename, mode="r", encoding="utf-8") as file:
+                json_string = file.read()
+        except FileNotFoundError:
+            return []
+        list_dict = cls.from_json_string(json_string)
+        instances = []
+        for _dict in list_dict:
+            ins = cls.create(**_dict)
+            instances.append(ins)
+        return instances
