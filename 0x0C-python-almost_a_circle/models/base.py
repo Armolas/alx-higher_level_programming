@@ -44,7 +44,10 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        ins = cls(2, 2)
+        if str(cls.__name__) == "Rectangle":
+            ins = cls(2, 2)
+        else:
+            ins = cls(2)
         ins.update(**dictionary)
         return ins
 
