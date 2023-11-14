@@ -44,7 +44,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        ins = cls(2, 2, 2, 2)
+        ins = cls(2, 2)
         ins.update(**dictionary)
         return ins
 
