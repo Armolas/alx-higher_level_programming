@@ -2,6 +2,7 @@
 """This module contains the base class"""
 
 
+import turtle
 import json
 """This imports the json module"""
 
@@ -91,3 +92,35 @@ class Base:
             ins = cls.create(**_dict)
             instances.append(ins)
         return instances
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        for rect in list_rectangles:
+            turtle.color("red", "blue")
+            turtle.goto(rect.x, rect.y)
+            turtle.begin_fill()
+            turtle.pendown()
+            turtle.forward(rect.width)
+            turtle.left(90)
+            turtle.forward(rect.height)
+            turtle.left(90)
+            turtle.forward(rect.width)
+            turtle.left(90)
+            turtle.forward(rect.height)
+            turtle.end_fill()
+            turtle.penup()
+        for sqr in list_squares:
+            turtle.color("green", "yellow")
+            turtle.goto(sqr.x, sqr.y)
+            turtle.begin_fill()
+            turtle.pendown()
+            turtle.forward(sqr.width)
+            turtle.left(90)
+            turtle.forward(sqr.width)
+            turtle.left(90)
+            turtle.forward(sqr.width)
+            turtle.left(90)
+            turtle.forward(sqr.width)
+            turtle.end_fill()
+            turtle.penup()
+        turtle.done()
