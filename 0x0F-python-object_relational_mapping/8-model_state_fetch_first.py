@@ -18,4 +18,4 @@ if __name__ == "__main__":
     if first:
         print(str(first.id) + ": " + first.name)
     else:
-        print()
+        print("Nothing")
