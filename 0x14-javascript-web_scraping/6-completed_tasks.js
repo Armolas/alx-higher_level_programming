@@ -13,7 +13,9 @@ request.get(url, (error, response, body) => {
   const completed = {};
   for (const todo of todos) {
     if (todo.userId !== userId) {
-      completed[userId] = complete;
+      if (complete !== 0) {
+        completed[userId] = complete;
+      }
       userId = todo.userId;
       complete = 0;
     }
@@ -21,6 +23,8 @@ request.get(url, (error, response, body) => {
       complete = complete + 1;
     }
   }
-  completed[userId] = complete;
+  if (complete !== 0) {
+    completed[userId] = complete;
+  }
   console.log(completed);
 });
